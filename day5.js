@@ -1,16 +1,17 @@
+
 let seeds1 = input.slice(8, 207);
 seeds1 = seeds1.split(" ");
 old_seeds = seeds1.map((num) => parseInt(num));
 console.log(old_seeds)
 
-const seeds = new Int32Array(100000000);
+const seeds = new Int32Array(500000000);
 let currentIndex = 0;
 for (let i = 0; i < old_seeds.length; i += 2) {
     let start = old_seeds[i];
     console.log("start",start)
     let length = old_seeds[i + 1];
     console.log("length",length)
-    for (let j = 0; j < length; j = j + 100) {
+    for (let j = 0; j < length; j = j + 1) {
        // seeds2.push(start + j);
         seeds[currentIndex++] = start + j
     }
@@ -83,7 +84,7 @@ function sol2(s) {
 let solutions_seeds = [999999999];
 let mappedkeys = Object.keys(mapped);
 for (let seed = 0; seed < seeds.length; seed++) {
-    if ((((seed / seeds.length) *100 ) % 5) == 0)  console.log(seed / seeds.length)
+    if ((((seed / seeds.length) *1000 ) % 5) == 0)  console.log(seed / seeds.length)
     //console.log(" ")
     // console.log("seed number:", seed)
     // console.log("seed value:", seeds[seed])
@@ -152,6 +153,10 @@ for (let seed = 0; seed < seeds.length; seed++) {
 
 //console.log(solutions_seeds)
 console.log(Math.min(...solutions_seeds));
+
+
+
+console.log(solutions_seeds)
 
 
 
